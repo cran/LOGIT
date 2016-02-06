@@ -1,8 +1,8 @@
-a2f55f4829568e7ca53818661a164a6f *DESCRIPTION
-c325319c58e81f413d33f7be6664ed21 *NAMESPACE
+ceb8964e74d415f3ab3411861fc68a3a *DESCRIPTION
+6246eaf830530e4668c3163a7159ca2e *NAMESPACE
 f7f7d82ee4f4640a61b141300e7985de *R/HLTest.R
 5192b2f109ad117b47d7850bba5fb7a2 *R/P__disp.r
-530e418a85d6fbfcd96fa7d711d31f63 *R/ROCtest.R
+e1f6e05a88b3eb6b3e0e3c9a6ace00e8 *R/ROCtest.R
 4f46e76f593a95125e6c234e3f036659 *R/confusion_stat.R
 288f254474e78f5a44097ddb6d3efed9 *R/hlGOF.test.r
 336552cfef28bdf43c01aa352a9e8543 *R/iQuantile.R
@@ -21,7 +21,7 @@ c7c21f5bbc592d2dab0935ca3e5ad1c8 *data/mylgg.rdata
 552a5a7ac92427d99f96a62b15bfa2b0 *man/HLTest.Rd
 39570765fccb901405db78f4b1eb2a40 *man/P__disp.Rd
 eef60d4e5e52adf37e57ff8d6c57f5a5 *man/R84.rd
-91f5dd357d1ee6feb2f959f7bcfb4d44 *man/ROCtest.Rd
+27ef0fd25185c3e5af427d9b8a1fbdc2 *man/ROCtest.Rd
 4d77867f62813bc8eef858834cdcac41 *man/azheart.rd
 285c6c758c31700a725cfb872623564d *man/badhealth.rd
 6849df105e95c8ad7afbc63c1b2f7cd3 *man/confusion_stat.Rd

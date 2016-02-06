@@ -6,8 +6,8 @@
 #' 1: Senstivity-specificity plot with optimal cut point statistic
 #' 2: ROC plot with Area Under Curve (AUC) statistic
 #' @aliases ROCtest
-#' @import  pROC caret ggplot2 ggthemes reshape
-#' @importFrom stats glm binomial predict
+#' @importFrom stats binomial glm predict
+#' @import  pROC caret ggplot2 reshape
 #' @usage ROCtest(model= model, fold=10, type=c("ROC","Sensitivity"))
 #'
 #' @format   \describe{
@@ -27,8 +27,7 @@
 #' @author Rafael de Souza, ELTE, Hungary,
 #' Joseph M. Hilbe, Arizona State University.
 #'
-#' @references Hilbe, Joseph M. (2015), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
-#'
+#' @references Hilbe, Joseph M. (2016), Practical Guide to Logistic Regression, Chapman & Hall/CRC.
 #' Hilbe, Joseph M. (2009), Logistic Regression Models, Chapman & Hall/CRC.
 #'@examples
 #'  library(MASS)
@@ -110,7 +109,6 @@ if(type == "ROC") {
 
 
  gg<- ggplot(data=g1,aes(x=Specificity,y=Sensitivity))+geom_line(size=1.5,alpha=0.7,color="blue4")+
-    theme_stata( base_size = 11, base_family = "sans")+
     theme(plot.title = element_text(hjust=0.5),axis.title.y=element_text(vjust=0.75),axis.title.x=element_text(vjust=-0.25),
           text = element_text(size=20))+
     annotate("text",size=7, x = 0.75, y = 0.14,color="black", label = paste("AUC: ",round(GROC$auc[1],3),sep="") ) +
@@ -127,9 +125,8 @@ if(type=="Sensitivity") {
                  probcut=GROC$thresholds)
   g2<-melt(g2, id=c("probcut"))
 
- gg<- ggplot(data=g2,aes(x=probcut,y=value,group=variable,colour=variable))+geom_line(name="",size=1.5,alpha=0.7)+
-   scale_colour_stata(name="")+geom_point(size=2)+
-    theme_stata( base_size = 11, base_family = "sans")+
+ gg<- ggplot(data=g2,aes(x=probcut,y=value,group=variable,colour=variable))+geom_line(size=1.5,alpha=0.7)+
+   geom_point(size=2)+
     theme(plot.title = element_text(hjust=0.5),axis.title.y=element_text(vjust=0.75),axis.title.x=element_text(vjust=-0.25),
           text = element_text(size=20))+
     annotate("text",size=7, x = 0.75, y = 0.15,color="black", label = paste("Cut Point: ",round(mean(cut),3),sep="") ) +
